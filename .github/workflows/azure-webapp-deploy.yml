@@ -24,13 +24,18 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
 
+    - name: 🗝️ Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+
     - name: Publish
       run: dotnet publish -c Release -o ${{ github.workspace }}/MyMvcApp
 
-    - name: 'Deploy to Azure Web App'
+    - name: 🚀 Deploy to Azure Web App
+      id: deploy-to-webapp
       uses: azure/webapps-deploy@v2
       with:
-        app-name: 'BciMYyWebApp' # Replace with your Azure Web App name
+        app-name: 'BciMYyWebApp'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
         package: ${{ github.workspace }}/MyMvcApp
