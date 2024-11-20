@@ -1,0 +1,21 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "hostingPlanName": {
+            "value": "BciMyHostingPlan"
+        },
+        "webAppName": {
+            "value": "BciMyWebApp"
+        },
+        "aadClientId": {
+            "value": "12345678-1234-1234-1234-123456789012"
+        },
+        "aadClientSecret": {
+            "value": "your-client-secret-here"
+        },
+        "aadTenantId": {
+            "value": "87654321-4321-4321-4321-210987654321"
+        }
+    }
+}

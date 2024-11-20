@@ -1,15 +1,19 @@
 @model IEnumerable<MyMvcApp.Models.User>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "User List";
 }
 
-<h2>Index</h2>
+<h2>User List</h2>
+
+<p>
+    @Html.ActionLink("Search Users", "Search", "User")
+</p>
 
 <p>
     @Html.ActionLink("Create New", "Create", "User")
 </p>
-<table class="table">
+<table class="table"></table>
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Name)
