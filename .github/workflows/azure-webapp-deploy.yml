@@ -27,11 +27,6 @@ jobs:
     - name: Publish
       run: dotnet publish -c Release -o ${{ github.workspace }}/MyMvcApp
 
-    - name: 'Login to Azure'
-      uses: azure/login@v1
-      with:
-        creds: pmet23PSZ*9h
-
     - name: 'Deploy to Azure Web App'
       uses: azure/webapps-deploy@v2
       with:
